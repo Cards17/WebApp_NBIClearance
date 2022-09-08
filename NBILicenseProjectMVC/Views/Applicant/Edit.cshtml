@@ -17,6 +17,7 @@
                 <label asp-for="BranchName" class="control-label"></label>
                 <input asp-for="BranchName" class="form-control" />
                 <span asp-validation-for="BranchName" class="text-danger"></span>
+
             </div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
@@ -25,8 +26,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="ValidId" class="control-label"></label>
-                <input asp-for="ValidId" class="form-control" />
+               
+                @*<input asp-for=ValidId class="form-control"/>*@
+                @Html.DropDownList("ValidId", Enum.GetValues(typeof(ValidIds))
+                .Cast<ValidIds>()
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                , new{ @class="form-control"})
                 <span asp-validation-for="ValidId" class="text-danger"></span>
+                
             </div>
             <div class="form-group">
                 <label asp-for="ApplicantPicture" class="control-label"></label>
@@ -78,6 +85,7 @@
                 <input asp-for="MobileNumber" class="form-control" />
                 <span asp-validation-for="MobileNumber" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
                 <label asp-for="EmailAddress" class="control-label"></label>
                 <input asp-for="EmailAddress" class="form-control" />
@@ -138,6 +146,7 @@
             </div>
         </form>
     </div>
+
 </div>
 
 <div>

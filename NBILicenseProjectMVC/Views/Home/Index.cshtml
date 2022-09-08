@@ -12,15 +12,6 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.BranchName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValidId)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.ApplicantPicture)
             </th>
             <th>
@@ -33,6 +24,15 @@
                 @Html.DisplayNameFor(model => model.Middlename)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.BranchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValidId)
+                
+            </th>
                 @Html.DisplayNameFor(model => model.Birthdate)
             </th>
             <th>
@@ -48,16 +48,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BranchName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Date)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ValidId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ApplicantPicture)
+                    <img src="@item.ApplicantPicture" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:200px; height:200px;" />
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Lastname)
@@ -68,6 +59,17 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Middlename)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BranchName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValidId)
+                  
+                </td>
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.Birthdate)
                 </td>
@@ -80,3 +82,4 @@
             </tr>
         }
     </tbody>
+</table>

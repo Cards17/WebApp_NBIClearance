@@ -13,6 +13,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ApplicantPicture)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.BranchName)
             </th>
             <th>
@@ -20,10 +23,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ValidId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApplicantPicture)
-            </th>
+            </th>          
             <th>
                 @Html.DisplayNameFor(model => model.Lastname)
             </th>
@@ -49,6 +49,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+                    <img src="@item.ApplicantPicture" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:200px; height:200px;" />
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BranchName)
             </td>
@@ -56,11 +59,12 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ValidId)
+              @*@Html.DisplayFor(modelItem => item.ValidId)*@
+                   @* @Html.DisplayFor(modelItem => Enum.GetName(typeof(ValidIds), item.ValidId)*@)
+                    @*@Html.DisplayFor(x => Enum.Parse(typeof(ValidIds), item.ValidId))*@
+                    @Html.DisplayFor(modelItem => item.ValidId.GetAttribute<DisplayAttribute>().Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApplicantPicture)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Lastname)
             </td>

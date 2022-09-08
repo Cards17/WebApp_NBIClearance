@@ -1,5 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Xml.Linq;
+using System.Reflection;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -35,4 +41,32 @@ namespace NBILicenseProjectMVC.Models
         public string MotherName { get; set; }
         public string MotherBirthplace { get; set; }
     }
+
+   
+    public enum ValidIds
+    {
+        [Display(Name= @"Passport ID")]
+        Passport,
+        [Display(Name = @"Voter's ID")]
+        VotersId,
+        [Display(Name = @"Driver's ID")]
+        DriversId,
+
+    }
+    public static class EnumExtensions
+    {
+        public static string GetDisplayName(this Enum value)
+        {
+            return value.GetType()
+              .GetMember(value.ToString())
+              .First()
+              .GetCustomAttribute<DisplayAttribute>()
+              ?.GetName();
+        }
+    }
+
+
+
+
+
 }

@@ -11,35 +11,53 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NBILicenseProjectMVC</a>
+                <img src="https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/nbi.jpg" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:150px; height:100px;" />
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">National Bureau of Investigation</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+                    
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark btn btn-primary px-2" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark btn btn-primary px-2" asp-area="" asp-controller="Applicant" asp-action="Index"> Applicant Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark btn btn-primary px-2" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
+    <div id="iddiv" class="body_footer_container">
         <div class="container">
-            &copy; 2022 - NBILicenseProjectMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
-    </footer>
+        <div>
+            <footer class="border-top footer text-muted">
+                <div class="footer_container">
+                    <img src="https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/nbi.jpg" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:150px; height:100px;" />
+                    <span class="align-content-center">
+                        &copy; 2022 - National Bureau of Investigation - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </span>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
