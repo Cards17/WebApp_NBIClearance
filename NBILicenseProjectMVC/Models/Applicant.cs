@@ -6,6 +6,7 @@ using System.Linq;
 using System.Xml.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NBILicenseProjectMVC.Enums;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -33,43 +34,154 @@ namespace NBILicenseProjectMVC.Models
         [Display(Name = "Applicant's Picture")]
         public string ApplicantPicture { get; set; }
 
+        [DataType(DataType.Text)]
         [Required]
         [Display(Name = "Last Name")]
         public string Lastname { get; set; }
-        
 
+        [DataType(DataType.MultilineText)]
+        [Required]
+        [Display(Name = "First Name")]
         public string Firstname { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Required]
+        [Display(Name = "Middle Name")]
         public string Middlename { get; set; }
+
+        [Required]
+        [Display(Name = "Birth Date")]
+        [DataType(DataType.Date)]
         public DateTime Birthdate { get; set; }
+
+        [Required]
         public string Gender { get; set; }
+
+        [Required]
+        [Display(Name ="Civil Status")]
         public string CivilStatus { get; set; }
+
+        [Display(Name = "Highest Educational Attainment")]
         public string EducationalAttainment { get; set; }
+
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Landline Number")]
         public int? LandlineNumber { get; set; }
+
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Mobile Number")]
         public int? MobileNumber { get; set; }
+
+        [Required(ErrorMessage = "Email is required.")]
+        [RegularExpression(@"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", ErrorMessage = "Invalid Email Address.")]
         public string EmailAddress { get; set; }
+
         public string Complexion { get; set; }
+
         public string Peculiarities { get; set; }
+
+        [DataType(DataType.Text)]
         public string Religion { get; set; }
+
+        [Range(1, 300, ErrorMessage = "Height should be between 1 cm and 300 cm")]
+        [Display(Name ="Height (cm)")]
         public decimal? Height { get; set; }
+
+        [Range(1, 100, ErrorMessage = "Height should be between 1 kg and 100 kg")]
+        [Display(Name = "Weight (kg)")]
         public decimal? Weight { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name ="Name of Husband or Wife")]
         public string HusbandOrWifeName { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Father's Name")]
         public string FatherName { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Father's Birth Place")]
         public string FatherBirthplace { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Mother's Name")]
         public string MotherName { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Mother's Birth Place")]
         public string MotherBirthplace { get; set; }
     }
 
    
-    public enum ValidIds
-    {
-        [Display(Name= @"Passport ID")]
-        Passport =1,
-        [Display(Name = @"Voter's ID")]
-        VotersId =2,
-        [Display(Name = @"Driver's ID")]
-        DriversId =3,
+    //public enum ValidIds
+    //{
+    //    [Display(Name= @"Passport ID")]
+    //    Passport ,
+    //    [Display(Name = @"Voter's ID")]
+    //    Voter ,
+    //    [Display(Name = @"Driver's ID")]
+    //    Driver ,
+    //    [Display(Name = @"PRC License")]
+    //    PRC,
+    //    [Display(Name = @"SSS ID")]
+    //    SSS,
+    //    [Display(Name = @"GSIS ID")]
+    //    GSIS,
+    //    [Display(Name = @"UMID")]
+    //    UMID,
+    //    [Display(Name = @"Postal ID")]
+    //    Postal,
+    //    [Display(Name = @"School ID")]
+    //    School,
+    //    [Display(Name = @"TIN ID")]
+    //    TIN,
+    //    [Display(Name = @"Philhealth ID")]
+    //    PhilHealth,
+    //    [Display(Name = @"Authenticated Birth Certificate")]
+    //    BirthCertificate,
+    //    [Display(Name = @"Alien Certificate of Registration")]
+    //    AlienCertificate,
+    //    [Display(Name = @"Senior Citizen ID")]
+    //    SeniorCitizen,
+    //    [Display(Name = @"Copy of Previous Clearance")]
+    //    PreviousClearance,
+    //}
 
+    public enum Gender
+    { 
+        Male,
+        Female
     }
+
+    public enum Civil_Status
+    { 
+        Single,
+        Married,
+        [Display(Name ="Widow/er")]
+        Widow,
+        [Display(Name = "Legally Separated")]
+        Separated,
+        Annulled
+    }
+
+    public enum Education
+    {
+        Elementary,
+        [Display(Name ="High School Graduate")]
+        HighSchool,
+        College
+    }
+
+    public enum complexion
+    {
+        light,
+        fair,
+        medium,
+        olive,
+        tan,
+        black
+    }
+
     public static class EnumExtensions
     {
 

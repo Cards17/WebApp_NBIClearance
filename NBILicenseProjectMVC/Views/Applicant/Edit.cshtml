@@ -1,4 +1,5 @@
-﻿@model NBILicenseProjectMVC.Models.Applicant
+﻿@using NBILicenseProjectMVC.Enums
+@model NBILicenseProjectMVC.Models.Applicant
 
 @{
     ViewData["Title"] = "Edit";
@@ -26,12 +27,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="ValidId" class="control-label"></label>
+                <select asp-for="ValidId" class="form-control" asp-items="Html.GetEnumSelectList<ValidIds>()">
+                    <option>Select your preferred valid ID</option>
+                </select>
                
-                @*<input asp-for=ValidId class="form-control"/>*@
-                @Html.DropDownList("ValidId", Enum.GetValues(typeof(ValidIds))
-                .Cast<ValidIds>()
-                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
-                , new{ @class="form-control"})
                 <span asp-validation-for="ValidId" class="text-danger"></span>
                 
             </div>
@@ -62,7 +61,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
+                @Html.DropDownList("Gender", Enum.GetValues(typeof(Gender))
+                .Cast<Gender>()
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                , new{ @class="form-control"})
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -72,7 +74,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="EducationalAttainment" class="control-label"></label>
-                <input asp-for="EducationalAttainment" class="form-control" />
+                @Html.DropDownList("education", Enum.GetValues(typeof(Education))
+                .Cast<Education>()
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                , new{ @class="form-control"})
                 <span asp-validation-for="EducationalAttainment" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -93,7 +98,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Complexion" class="control-label"></label>
-                <input asp-for="Complexion" class="form-control" />
+                @Html.DropDownList("complexion", Enum.GetValues(typeof(complexion))
+                .Cast<complexion>()
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                , new{ @class="form-control"})
                 <span asp-validation-for="Complexion" class="text-danger"></span>
             </div>
             <div class="form-group">
