@@ -6,7 +6,7 @@ using System.Linq;
 using System.Xml.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using NBILicenseProjectMVC.Enums;
+//using NBILicenseProjectMVC.Enums;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -64,11 +64,12 @@ namespace NBILicenseProjectMVC.Models
         [Display(Name = "Highest Educational Attainment")]
         public string EducationalAttainment { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
+        [DataType(DataType.Text)]
         [Display(Name = "Landline Number")]
         public int? LandlineNumber { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
+        [DataType(DataType.Text)]
+        //[RegularExpression(@"^(?:[0-9]{11})?$")]
         [Display(Name = "Mobile Number")]
         public int? MobileNumber { get; set; }
 
@@ -110,76 +111,6 @@ namespace NBILicenseProjectMVC.Models
         [DataType(DataType.MultilineText)]
         [Display(Name = "Mother's Birth Place")]
         public string MotherBirthplace { get; set; }
-    }
-
-   
-    //public enum ValidIds
-    //{
-    //    [Display(Name= @"Passport ID")]
-    //    Passport ,
-    //    [Display(Name = @"Voter's ID")]
-    //    Voter ,
-    //    [Display(Name = @"Driver's ID")]
-    //    Driver ,
-    //    [Display(Name = @"PRC License")]
-    //    PRC,
-    //    [Display(Name = @"SSS ID")]
-    //    SSS,
-    //    [Display(Name = @"GSIS ID")]
-    //    GSIS,
-    //    [Display(Name = @"UMID")]
-    //    UMID,
-    //    [Display(Name = @"Postal ID")]
-    //    Postal,
-    //    [Display(Name = @"School ID")]
-    //    School,
-    //    [Display(Name = @"TIN ID")]
-    //    TIN,
-    //    [Display(Name = @"Philhealth ID")]
-    //    PhilHealth,
-    //    [Display(Name = @"Authenticated Birth Certificate")]
-    //    BirthCertificate,
-    //    [Display(Name = @"Alien Certificate of Registration")]
-    //    AlienCertificate,
-    //    [Display(Name = @"Senior Citizen ID")]
-    //    SeniorCitizen,
-    //    [Display(Name = @"Copy of Previous Clearance")]
-    //    PreviousClearance,
-    //}
-
-    public enum Gender
-    { 
-        Male,
-        Female
-    }
-
-    public enum Civil_Status
-    { 
-        Single,
-        Married,
-        [Display(Name ="Widow/er")]
-        Widow,
-        [Display(Name = "Legally Separated")]
-        Separated,
-        Annulled
-    }
-
-    public enum Education
-    {
-        Elementary,
-        [Display(Name ="High School Graduate")]
-        HighSchool,
-        College
-    }
-
-    public enum complexion
-    {
-        light,
-        fair,
-        medium,
-        olive,
-        tan,
-        black
     }
 
     public static class EnumExtensions

@@ -13,9 +13,19 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+             <div class="form-group">
+                <label asp-for="ApplicantPicture" class="control-label"></label>
+                <input asp-for="ApplicantPicture" class="form-control" />
+                <span asp-validation-for="ApplicantPicture" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="BranchName" class="control-label"></label>
-                <input asp-for="BranchName" class="form-control" />
+                @Html.DropDownList("BranchName", Enum.GetValues(typeof(nbibranch))
+                .Cast<nbibranch>()
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                , new{ @class="form-control"})
                 <span asp-validation-for="BranchName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -31,11 +41,7 @@
                 , new{ @class="form-control"})
                 <span asp-validation-for="ValidId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="ApplicantPicture" class="control-label"></label>
-                <input asp-for="ApplicantPicture" class="form-control" />
-                <span asp-validation-for="ApplicantPicture" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="Lastname" class="control-label"></label>
                 <input asp-for="Lastname" class="form-control" />
@@ -128,27 +134,27 @@
                 <input asp-for="HusbandOrWifeName" class="form-control" />
                 <span asp-validation-for="HusbandOrWifeName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" type="text">
                 <label asp-for="FatherName" class="control-label"></label>
                 <input asp-for="FatherName" class="form-control" />
                 <span asp-validation-for="FatherName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" type="text">
                 <label asp-for="FatherBirthplace" class="control-label"></label>
                 <input asp-for="FatherBirthplace" class="form-control" />
                 <span asp-validation-for="FatherBirthplace" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" type="text">
                 <label asp-for="MotherName" class="control-label"></label>
                 <input asp-for="MotherName" class="form-control" />
                 <span asp-validation-for="MotherName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" type="text">
                 <label asp-for="MotherBirthplace" class="control-label"></label>
                 <input asp-for="MotherBirthplace" class="form-control" />
                 <span asp-validation-for="MotherBirthplace" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" type="text">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

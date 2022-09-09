@@ -12,7 +12,7 @@ namespace NBILicenseProjectMVC.Controllers
 {
     public class ApplicantController : Controller
     {
-        private readonly CustomerDbContext _context;
+        //private readonly CustomerDbContext _context;
         private readonly IConfiguration _config;
         //private readonly IWebHostEnvironment _webHostingEnviroment;
         private readonly string _apiUrl;
@@ -55,8 +55,8 @@ namespace NBILicenseProjectMVC.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest("Application Error");
-                //return View("BadRequest");
+                //return BadRequest("Application Error");
+                return View("BadRequest");
             }
             return View(listapplicants);
         }
@@ -66,13 +66,16 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                //return NotFound();
+                return View("NotFound");
+              
             }
 
             var applicant = GetApplicant(id.Value);
             if (applicant == null)
             {
-                return NotFound();
+                //return NotFound();
+                return View("NotFound");
             }
 
             return View(applicant);
@@ -109,13 +112,15 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                //return NotFound();
+                return View("NotFound");
             }
 
             var applicant = GetApplicant(id.Value);
             if (applicant == null)
             {
-                return NotFound();
+                //return NotFound();
+                return View("NotFound");
             }
             return View(applicant);
         }
@@ -129,7 +134,8 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id != applicant.Id)
             {
-                return NotFound();
+                //return NotFound();
+                return View("NotFound");
             }
 
             if (ModelState.IsValid)
@@ -148,14 +154,14 @@ namespace NBILicenseProjectMVC.Controllers
                     }
                     else
                     {
-                        //Response.StatusCode = 404;
-                        //return View("PageNotFound");
-                        return NotFound();
+                        Response.StatusCode = 404;
+                        return View("NotFound");
                     }
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest("Application Error");
+                    Response.StatusCode = 400;
+                    return View("BadRequest");
                 }  
             }
             return View(applicant);
@@ -166,13 +172,15 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                Response.StatusCode = 404;
+                return View("NotFound");
             }
 
             var applicant = GetApplicant(id.Value);
             if (applicant == null)
             {
-                return NotFound();
+                Response.StatusCode = 404;
+                return View("NotFound");
             }
 
             return View(applicant);
@@ -196,7 +204,8 @@ namespace NBILicenseProjectMVC.Controllers
             }
             catch (Exception)
             {
-                return BadRequest("Application Error");
+                Response.StatusCode = 400;
+                return View("BadRequest");
             }
             return RedirectToAction(nameof(Delete), id);
 

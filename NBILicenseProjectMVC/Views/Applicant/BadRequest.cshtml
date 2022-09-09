@@ -1,0 +1,16 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "400 Error";
+}
+<div class="alert alert-danger mt-1 mb-1">
+    <h4> 400 Bad Request Error:</h4>
+    <hr />
+    <h5>
+        @Model application error.
+    </h5>
+
+</div>
+<a asp-action="Index" asp-controller="Home" class="btn btn-outline-success">
+    Click here to proceed to Home Page.
+</a>
