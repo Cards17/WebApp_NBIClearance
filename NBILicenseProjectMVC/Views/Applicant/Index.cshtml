@@ -59,10 +59,7 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-              @*@Html.DisplayFor(modelItem => item.ValidId)*@
-                   @* @Html.DisplayFor(modelItem => Enum.GetName(typeof(ValidIds), item.ValidId)*@)
-                    @*@Html.DisplayFor(x => Enum.Parse(typeof(ValidIds), item.ValidId))*@
-                    @Html.DisplayFor(modelItem => item.ValidId.GetAttribute<DisplayAttribute>().Name)
+               @Html.DisplayFor(modelItem => item.ValidId)
             </td>
             
             <td>
