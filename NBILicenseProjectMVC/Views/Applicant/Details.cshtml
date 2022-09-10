@@ -11,28 +11,10 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BranchName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BranchName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ValidId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ValidId)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ApplicantPicture)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ApplicantPicture)
+                <img src="@Model.ApplicantPicture" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:200px; height:200px;" />
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Lastname)
@@ -52,6 +34,25 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Middlename)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BranchName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BranchName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ValidId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValidId)
+        </dd>
+        
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Birthdate)
         </dt>
@@ -157,6 +158,5 @@
     </dl>
 </div>
 <div>
-    @*<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index"> Back </a>
 </div>

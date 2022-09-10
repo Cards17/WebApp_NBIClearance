@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace NBILicenseProject.Models
+namespace NBILicenseProjectAPI.Models
 {
     public partial class Applicant
     {
@@ -21,8 +21,8 @@ namespace NBILicenseProject.Models
         public string Gender { get; set; }
         public string CivilStatus { get; set; }
         public string EducationalAttainment { get; set; }
-        public int? LandlineNumber { get; set; }
-        public int? MobileNumber { get; set; }
+        public string LandlineNumber { get; set; }
+        public string MobileNumber { get; set; }
         public string EmailAddress { get; set; }
         public string Complexion { get; set; }
         public string Peculiarities { get; set; }

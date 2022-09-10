@@ -34,7 +34,7 @@ namespace NBILicenseProjectMVC.Controllers
         }
 
         // GET: Applicant
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchBy, string searchValue)
         {
             //return View(await _context.Applicant.ToListAsync());
             IList<Applicant> listapplicants = null;
@@ -55,9 +55,44 @@ namespace NBILicenseProjectMVC.Controllers
             }
             catch (Exception ex)
             {
-                //return BadRequest("Application Error");
                 return View("BadRequest");
             }
+
+            //Search functionalities
+
+            try
+            {
+                if (listapplicants.Count == 0)
+                {
+                    TempData["InfoMessage"] = "Your database has no entry data.";
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(searchValue))
+                    {
+                        TempData["InfoMessage"] = "PLease provide search value";
+                        return View(listapplicants);
+                    }
+                    else
+                    {
+                        if (searchBy.ToLower() == "firstname")
+                        {
+                            var searchAuthorName = listapplicants.Where(x => x.Firstname.ToLower().Contains(searchValue.ToLower()));
+                            return View(searchAuthorName);
+                        }
+                        else if (searchBy.ToLower() == "lastname")
+                        {
+                            var searchTitle = listapplicants.Where(x => x.Lastname.ToLower().Contains(searchValue.ToLower()));
+                            return View(searchTitle);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return View("BadRequest");
+            }
+
             return View(listapplicants);
         }
 
@@ -66,16 +101,13 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id == null)
             {
-                //return NotFound();
-                return View("NotFound");
-              
+                return View("NotFound", id.Value);
             }
 
             var applicant = GetApplicant(id.Value);
             if (applicant == null)
             {
-                //return NotFound();
-                return View("NotFound");
+                return View("NotFound", id.Value);
             }
 
             return View(applicant);
@@ -112,15 +144,13 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id == null)
             {
-                //return NotFound();
-                return View("NotFound");
+                return View("NotFound", id.Value);
             }
 
             var applicant = GetApplicant(id.Value);
             if (applicant == null)
             {
-                //return NotFound();
-                return View("NotFound");
+                return View("NotFound", id.Value);
             }
             return View(applicant);
         }
@@ -135,7 +165,7 @@ namespace NBILicenseProjectMVC.Controllers
             if (id != applicant.Id)
             {
                 //return NotFound();
-                return View("NotFound");
+                return View("NotFound", id);
             }
 
             if (ModelState.IsValid)
@@ -155,7 +185,7 @@ namespace NBILicenseProjectMVC.Controllers
                     else
                     {
                         Response.StatusCode = 404;
-                        return View("NotFound");
+                        return View("NotFound", id);
                     }
                 }
                 catch (Exception ex)
@@ -173,14 +203,14 @@ namespace NBILicenseProjectMVC.Controllers
             if (id == null)
             {
                 Response.StatusCode = 404;
-                return View("NotFound");
+                return View("NotFound", id.Value);
             }
 
             var applicant = GetApplicant(id.Value);
             if (applicant == null)
             {
                 Response.StatusCode = 404;
-                return View("NotFound");
+                return View("NotFound", id.Value);
             }
 
             return View(applicant);

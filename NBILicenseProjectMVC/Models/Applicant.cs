@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Xml.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using NBILicenseProjectMVC.Enums;
 //using NBILicenseProjectMVC.Enums;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
@@ -27,11 +29,12 @@ namespace NBILicenseProjectMVC.Models
         public DateTime Date { get; set; }
 
         [Required]
-        [Display(Name ="List of Valid ID's")]
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Valid ID")]
         public string ValidId { get; set; }
 
         [Required]
-        [Display(Name = "Applicant's Picture")]
+        [Display(Name = "Applicant's Photo")]
         public string ApplicantPicture { get; set; }
 
         [DataType(DataType.Text)]
@@ -39,12 +42,12 @@ namespace NBILicenseProjectMVC.Models
         [Display(Name = "Last Name")]
         public string Lastname { get; set; }
 
-        [DataType(DataType.MultilineText)]
+        [DataType(DataType.Text)]
         [Required]
         [Display(Name = "First Name")]
         public string Firstname { get; set; }
 
-        [DataType(DataType.MultilineText)]
+        [DataType(DataType.Text)]
         [Required]
         [Display(Name = "Middle Name")]
         public string Middlename { get; set; }
@@ -58,56 +61,70 @@ namespace NBILicenseProjectMVC.Models
         public string Gender { get; set; }
 
         [Required]
-        [Display(Name ="Civil Status")]
+        [Display(Name = "Civil Status")]
         public string CivilStatus { get; set; }
 
         [Display(Name = "Highest Educational Attainment")]
         public string EducationalAttainment { get; set; }
 
-        [DataType(DataType.Text)]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^(\+?[0-9]{2,}[0-9]{2,})$", ErrorMessage = "Invalid telephone number and/or format")]
         [Display(Name = "Landline Number")]
-        public int? LandlineNumber { get; set; }
+        public string LandlineNumber { get; set; }
 
         [DataType(DataType.Text)]
-        //[RegularExpression(@"^(?:[0-9]{11})?$")]
+        [RegularExpression(@"^(?:[0-9]{11})?$" , ErrorMessage = "Invalid mobile number and/or format")]
         [Display(Name = "Mobile Number")]
-        public int? MobileNumber { get; set; }
+        public string MobileNumber { get; set; }
 
+        [EmailAddress]
         [Required(ErrorMessage = "Email is required.")]
         [RegularExpression(@"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", ErrorMessage = "Invalid Email Address.")]
         public string EmailAddress { get; set; }
 
         public string Complexion { get; set; }
 
+        [DataType(DataType.MultilineText)]
         public string Peculiarities { get; set; }
 
         [DataType(DataType.Text)]
         public string Religion { get; set; }
 
         [Range(1, 300, ErrorMessage = "Height should be between 1 cm and 300 cm")]
-        [Display(Name ="Height (cm)")]
+        [Display(Name = "Height (cm)")]
         public decimal? Height { get; set; }
 
         [Range(1, 100, ErrorMessage = "Height should be between 1 kg and 100 kg")]
         [Display(Name = "Weight (kg)")]
         public decimal? Weight { get; set; }
 
+        [MinLength(1, ErrorMessage = "The Address must be at least 1 character")]
+        [MaxLength(100, ErrorMessage = "The Address cannot be more than 100 characters")]
         [DataType(DataType.MultilineText)]
-        [Display(Name ="Name of Husband or Wife")]
+        [Display(Name = "Name of Husband or Wife")]
         public string HusbandOrWifeName { get; set; }
 
+        [MinLength(1, ErrorMessage = "The Address must be at least 1 character")]
+        [MaxLength(100, ErrorMessage = "The Address cannot be more than 100 characters")]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Father's Name")]
         public string FatherName { get; set; }
 
+
+        [MinLength(5, ErrorMessage = "The Address must be at least 5 characters")]
+        [MaxLength(100, ErrorMessage = "The Address cannot be more than 100 characters")]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Father's Birth Place")]
         public string FatherBirthplace { get; set; }
 
+        [MinLength(1, ErrorMessage = "The Address must be at least 1 character")]
+        [MaxLength(100, ErrorMessage = "The Address cannot be more than 100 characters")]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Mother's Name")]
         public string MotherName { get; set; }
 
+        [MinLength(5, ErrorMessage = "The Address must be at least 5 characters")]
+        [MaxLength(100, ErrorMessage = "The Address cannot be more than 100 characters")]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Mother's Birth Place")]
         public string MotherBirthplace { get; set; }
@@ -131,13 +148,4 @@ namespace NBILicenseProjectMVC.Models
 
 
     }
-
-    
-
-
-
-
-
-
-
 }

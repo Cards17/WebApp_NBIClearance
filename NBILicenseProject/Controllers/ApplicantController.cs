@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using NBILicenseProject.Models;
+using NBILicenseProjectAPI.Models;
 
 namespace NBILicenseProject.Controllers
 {

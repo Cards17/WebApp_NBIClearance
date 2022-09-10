@@ -107,7 +107,10 @@ namespace NBILicenseProjectMVC.Models
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.LandlineNumber).HasColumnName("landline_number");
+                entity.Property(e => e.LandlineNumber)
+                    .HasColumnName("landline_number")
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Lastname)
                     .IsRequired()
@@ -121,7 +124,10 @@ namespace NBILicenseProjectMVC.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.MobileNumber).HasColumnName("mobile_number");
+                entity.Property(e => e.MobileNumber)
+                    .HasColumnName("mobile_number")
+                    .HasMaxLength(12)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.MotherBirthplace)
                     .HasColumnName("mother_birthplace")

@@ -5,9 +5,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>Applicant</h4>
+<h1 style="text-align: center">Edit Page</h1>
+<br />
+<h4>Applicant's Details</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,7 +16,10 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="BranchName" class="control-label"></label>
-                <input asp-for="BranchName" class="form-control" />
+                @Html.DropDownList("BranchName", Enum.GetValues(typeof(nbibranch))
+                        .Cast<nbibranch>()
+                        .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                        , new{ @class="form-control"})
                 <span asp-validation-for="BranchName" class="text-danger"></span>
 
             </div>
@@ -40,22 +43,22 @@
             </div>
             <div class="form-group">
                 <label asp-for="ApplicantPicture" class="control-label"></label>
-                <input asp-for="ApplicantPicture" class="form-control" />
+               <textarea asp-for="ApplicantPicture" class="form-control" text-wrap:normal" type="text" placeholder="Enter URL for photo"></textarea>
                 <span asp-validation-for="ApplicantPicture" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Lastname" class="control-label"></label>
-                <input asp-for="Lastname" class="form-control" />
+                <textarea asp-for="Lastname" class="form-control" text-wrap:normal" type="text" placeholder="Enter Last Name"></textarea>
                 <span asp-validation-for="Lastname" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Firstname" class="control-label"></label>
-                <input asp-for="Firstname" class="form-control" />
+                <textarea asp-for="Firstname" class="form-control" text-wrap:normal" type="text" placeholder="Enter First Name"></textarea>
                 <span asp-validation-for="Firstname" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Middlename" class="control-label"></label>
-                <input asp-for="Middlename" class="form-control" />
+                 <textarea asp-for="Middlename" class="form-control" text-wrap:normal" type="text" placeholder="Enter Middle Name"></textarea>
                 <span asp-validation-for="Middlename" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -78,7 +81,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="EducationalAttainment" class="control-label"></label>
-                @Html.DropDownList("education", Enum.GetValues(typeof(Education))
+                @Html.DropDownList("EducationalAttainment", Enum.GetValues(typeof(Education))
                 .Cast<Education>()
                 .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
                 , new{ @class="form-control"})
@@ -86,12 +89,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="LandlineNumber" class="control-label"></label>
-                <input asp-for="LandlineNumber" class="form-control" />
+                <textarea asp-for="LandlineNumber" class="form-control" text-wrap:normal" type="text" placeholder="Enter a Valid Landline Number"></textarea>
                 <span asp-validation-for="LandlineNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MobileNumber" class="control-label"></label>
-                <input asp-for="MobileNumber" class="form-control" />
+                <textarea asp-for="MobileNumber" class="form-control" text-wrap:normal" type="text" placeholder="Enter a Valid Mobile Number"></textarea>
                 <span asp-validation-for="MobileNumber" class="text-danger"></span>
             </div>
             
@@ -110,12 +113,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Peculiarities" class="control-label"></label>
-                <input asp-for="Peculiarities" class="form-control" />
+                <textarea asp-for="Peculiarities" class="form-control" text-wrap:normal" type="text" placeholder="Provide any peculiarities."></textarea>
                 <span asp-validation-for="Peculiarities" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Religion" class="control-label"></label>
-                <input asp-for="Religion" class="form-control" />
+                <textarea asp-for="Religion" class="form-control" text-wrap:normal" type="text" placeholder="Enter your Religious Affiliation'"></textarea>
                 <span asp-validation-for="Religion" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -130,27 +133,27 @@
             </div>
             <div class="form-group">
                 <label asp-for="HusbandOrWifeName" class="control-label"></label>
-                <input asp-for="HusbandOrWifeName" class="form-control" />
+                <textarea asp-for="HusbandOrWifeName" class="form-control" text-wrap:normal" type="text" placeholder="Enter Husband or Wife Name if married'"></textarea>
                 <span asp-validation-for="HusbandOrWifeName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FatherName" class="control-label"></label>
-                <input asp-for="FatherName" class="form-control" />
+                <textarea asp-for="FatherName" class="form-control" text-wrap:normal" type="text" placeholder="Enter Father's Name'"></textarea>
                 <span asp-validation-for="FatherName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FatherBirthplace" class="control-label"></label>
-                <input asp-for="FatherBirthplace" class="form-control" />
+                <textarea asp-for="FatherBirthplace" class="form-control" text-wrap:normal" type="text" placeholder="Enter your Father's Birth Place'"></textarea>
                 <span asp-validation-for="FatherBirthplace" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MotherName" class="control-label"></label>
-                <input asp-for="MotherName" class="form-control" />
+                <textarea asp-for="MotherName" class="form-control" text-wrap:normal" type="text" placeholder="Enter Mother's Name'"></textarea>
                 <span asp-validation-for="MotherName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MotherBirthplace" class="control-label"></label>
-                <input asp-for="MotherBirthplace" class="form-control" />
+                 <textarea asp-for="MotherBirthplace" class="form-control" text-wrap:normal" type="text" placeholder="Enter Mother's Birth Place"></textarea>
                 <span asp-validation-for="MotherBirthplace" class="text-danger"></span>
             </div>
             <div class="form-group">

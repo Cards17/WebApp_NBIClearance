@@ -1,3 +1,9 @@
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.csproj.AssemblyReference.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.AssemblyInfoInputs.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.AssemblyInfo.cs
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.csproj.CoreCompileInputs.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin\Debug\netcoreapp3.1\NBILicenseProjectAPI.exe
@@ -120,12 +126,6 @@ C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.csproj.AssemblyReference.cache
-C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.AssemblyInfoInputs.cache
-C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.AssemblyInfo.cs
-C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.csproj.CoreCompileInputs.cache
-C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\staticwebassets\NBILicenseProjectAPI.StaticWebAssets.Manifest.cache
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.RazorTargetAssemblyInfo.cache
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.csproj.CopyComplete
