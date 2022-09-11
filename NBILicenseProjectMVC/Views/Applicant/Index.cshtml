@@ -53,10 +53,11 @@
                         @Html.DisplayNameFor(model => model.Date)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ValidId)
+                       @Html.DisplayNameFor(model => model.ValidId)
+                        
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Lastname)
+                        <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">  @Html.DisplayNameFor(model => model.Lastname)</a>
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Firstname)

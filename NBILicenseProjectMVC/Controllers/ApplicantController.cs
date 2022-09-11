@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using NBILicenseProjectMVC.Models;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+
 
 namespace NBILicenseProjectMVC.Controllers
 {
@@ -34,9 +36,9 @@ namespace NBILicenseProjectMVC.Controllers
         }
 
         // GET: Applicant
-        public async Task<IActionResult> Index(string searchBy, string searchValue)
+        public async Task<IActionResult> Index(string searchBy, string searchValue, string sortOrder)
         {
-            //return View(await _context.Applicant.ToListAsync());
+            
             IList<Applicant> listapplicants = null;
             try
             {
@@ -92,9 +94,31 @@ namespace NBILicenseProjectMVC.Controllers
             {
                 return View("BadRequest");
             }
+            
+            //Sort
 
-            return View(listapplicants);
+            try 
+            {
+                ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "Lastname" : "";
+                SortFilter sortFilter = new SortFilter();
+
+                if (sortFilter.sortBy == "Lastname")
+                {
+                    var sortlastname = listapplicants.Where(x => x.Lastname.StartsWith(sortOrder));
+                    sortlastname.OrderBy(x => x.Lastname);
+                    return View(sortlastname.ToList());
+                }
+                
+            }
+         
+            catch (Exception ex)
+            {
+                return View("BadRequest");
+            }
+
+           return View(listapplicants);
         }
+
 
         // GET: Applicant/Details/5
         public async Task<IActionResult> Details(int? id)

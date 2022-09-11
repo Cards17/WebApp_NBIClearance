@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
 namespace NBILicenseProjectMVC.Enums
@@ -42,7 +43,7 @@ namespace NBILicenseProjectMVC.Enums
         Female
     }
 
-    public enum Civil_Status
+    public enum CivilStatus
     {
         Single,
         Married,
@@ -56,7 +57,7 @@ namespace NBILicenseProjectMVC.Enums
     public enum Education
     {
         Elementary,
-        [Display(Name = "High School Graduate")]
+        [Display(Name = "High School")]
         HighSchool,
         College
     }
@@ -75,7 +76,7 @@ namespace NBILicenseProjectMVC.Enums
     {
         [Display(Name = "Cebu City")]
         CebuCity,
-        [Display(Name = "Manudaue City")]
+        [Display(Name = "Mandaue City")]
         MandaueCity,
         [Display(Name = "Lapu-Lapu City")]
         LapuLapuCity,
@@ -88,4 +89,5 @@ namespace NBILicenseProjectMVC.Enums
         [Display(Name = "Davao City")]
         DavaoCity
     }
+  
 }

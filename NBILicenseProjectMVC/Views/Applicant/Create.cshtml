@@ -21,24 +21,10 @@
                 <label asp-for="BranchName" class="control-label"></label>
                 @Html.DropDownList("BranchName", Enum.GetValues(typeof(nbibranch))
                 .Cast<nbibranch>()
-                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() }), "-- Select lists of NBI Branches --"
                 , new{ @class="form-control"})
                 <span asp-validation-for="BranchName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ValidId" class="control-label"></label>
-                @Html.DropDownList("ValidId", Enum.GetValues(typeof(ValidIds))
-                .Cast<ValidIds>()
-                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
-                , new{ @class="form-control"})
-                <span asp-validation-for="ValidId" class="text-danger"></span>
-            </div>
-           
             <div class="form-group">
                 <label asp-for="Lastname" class="control-label"></label>
                 <textarea asp-for="Lastname" class="form-control" text-wrap:normal" type="text" placeholder="Enter Last Name"></textarea>
@@ -55,6 +41,21 @@
                 <span asp-validation-for="Middlename" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValidId" class="control-label"></label>
+                @Html.DropDownList("ValidId", Enum.GetValues(typeof(ValidIds))
+                .Cast<ValidIds>()
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() }), "-- Select lists of valid ID's --"
+                , new{ @class="form-control"})
+                <span asp-validation-for="ValidId" class="text-danger"></span>
+            </div>
+           
+            
+            <div class="form-group">
                 <label asp-for="Birthdate" class="control-label"></label>
                 <input asp-for="Birthdate" class="form-control" />
                 <span asp-validation-for="Birthdate" class="text-danger"></span>
@@ -63,15 +64,15 @@
                 <label asp-for="Gender" class="control-label"></label>
                 @Html.DropDownList("Gender", Enum.GetValues(typeof(Gender))
                 .Cast<Gender>()
-                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() }), "-- Select Gender --"
                 , new{ @class="form-control"})
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CivilStatus" class="control-label"></label>
-                 @Html.DropDownList("CivilStatus", Enum.GetValues(typeof(Civil_Status))
-                .Cast<Civil_Status>()
-                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                @Html.DropDownList("CivilStatus", Enum.GetValues(typeof(CivilStatus))
+                .Cast<CivilStatus>()
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() }), "-- Select Civil Status --"
                 , new{ @class="form-control"})
                 <span asp-validation-for="CivilStatus" class="text-danger"></span>
             </div>
@@ -79,30 +80,31 @@
                 <label asp-for="EducationalAttainment" class="control-label"></label>
                  @Html.DropDownList("EducationalAttainment", Enum.GetValues(typeof(Education))
                 .Cast<Education>()
-                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() }), "-- Select Educational Attainment --"
                 , new{ @class="form-control"})
                 <span asp-validation-for="EducationalAttainment" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LandlineNumber" class="control-label"></label>
-                <textarea asp-for="LandlineNumber" class="form-control" text-wrap:normal" type="text" placeholder="Enter a Valid Landline Number"></textarea>
+                <textarea asp-for="LandlineNumber" class="form-control" text-wrap:normal" type="text" placeholder="Enter 10-digit Landline Number"></textarea>
                 <span asp-validation-for="LandlineNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MobileNumber" class="control-label"></label>
-                 <textarea asp-for="MobileNumber" class="form-control" text-wrap:normal" type="text" placeholder="Enter a Valid Mobile Number"></textarea>
+                 <textarea asp-for="MobileNumber" class="form-control" text-wrap:normal" type="text" placeholder="Enter 11-digit Mobile Number"></textarea>
                 <span asp-validation-for="MobileNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EmailAddress" class="control-label"></label>
-                <input asp-for="EmailAddress" class="form-control" />
+             @*   <input asp-for="EmailAddress" class="form-control" />*@
+                <textarea asp-for="EmailAddress" class="form-control" text-wrap:normal" type="email" placeholder="Enter a valid email address"></textarea>
                 <span asp-validation-for="EmailAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Complexion" class="control-label"></label>
                  @Html.DropDownList("Complexion", Enum.GetValues(typeof(complexion))
                 .Cast<complexion>()
-                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() })
+                .Select(e => new SelectListItem() { Value = e.ToString(), Text = e.GetDisplayName() }), "-- Select type of complexions --"
                 , new{ @class="form-control"})
                 <span asp-validation-for="Complexion" class="text-danger"></span>
             </div>
@@ -113,22 +115,24 @@
             </div>
             <div class="form-group">
                 <label asp-for="Religion" class="control-label"></label>
-                <input asp-for="Religion" class="form-control" />
+                <textarea asp-for="Religion" class="form-control" text-wrap:normal" type="text" placeholder="Enter your Religious Affiliation'"></textarea>
                 <span asp-validation-for="Religion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Height" class="control-label"></label>
-                <input asp-for="Height" class="form-control" />
+                <input asp-for="Height" class="form-control" type="range" id="slider" min="1" max="300" value="50"/>
+                <span class="range-value" id="range-value">50</span>
                 <span asp-validation-for="Height" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Weight" class="control-label"></label>
-                <input asp-for="Weight" class="form-control" />
+                <input asp-for="Weight" class="form-control" type="range" id="slider2" min="1" max="200" value="50" />
+                <span class="range-value2" id="range-value2">50</span>
                 <span asp-validation-for="Weight" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="HusbandOrWifeName" class="control-label"></label>
-                <input asp-for="HusbandOrWifeName" class="form-control" />
+                <textarea asp-for="HusbandOrWifeName" class="form-control" text-wrap:normal" type="text" placeholder="Enter Husband or Wife Name if married"></textarea>
                 <span asp-validation-for="HusbandOrWifeName" class="text-danger"></span>
             </div>
             <div class="form-group" type="text">
