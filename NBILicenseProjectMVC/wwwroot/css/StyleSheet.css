@@ -1,13 +1,8 @@
 ﻿
-.table {
-    border: 1px solid black;
-}
 
 .table_rowspace {
     padding: 10px;
     border-bottom: 100px solid transparent;
-    /*ackground-color: #dc2626;
-    color: white;*/
     background-clip: padding-box;
 }
 
@@ -27,25 +22,10 @@
 }
 
 .body_footer_container {
-    margin-top: 200px;
     min-height: 150%;
     position: relative;
     height: 2000px;
     
-}
-
-.html_header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background-color: lightgray;
-    display: flex;
-    width: 100vw;
-    height: 300px;
-    padding: 0px;
-    line-height: 50px;
-    box-sizing: border-box;
-    flex-direction: column;
 }
 
 .html_body {
@@ -63,17 +43,16 @@
     white-space: initial;
 }
 
-.navbar-brand, .nav > li > a {
-    padding: 30px 15px;
-}
-
-.carousel .item {
-    height: 150px;
-}
-
 .item img {
     position: absolute;
     top: 0;
     left: 0;
     min-height: 300px;
+}
+
+.text{
+    font-family:'Segoe UI';
+    font-size: 15px; 
+    color:azure; 
+    font-weight:400
 }

@@ -113,7 +113,7 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr style="font-family:'Segoe UI'; font-size: 14px">
+                <tr style="font-family:'Segoe UI'; font-size: 20px; font-weight:500">
                     <td>
                         <img src="@item.ApplicantPicture" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:100px; height:100px;" />
                     </td>
@@ -150,7 +150,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.MobileNumber)
                     </td>
-                    <td class="text-justify" id="textbox" style="width:60px; height:60px; word-wrap: break-word">
+                    <td class="text-justify" id="textbox" style="width:80px; height:0px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.EmailAddress)
                     </td>
                     <td>
@@ -159,7 +159,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Peculiarities)
                     </td>
-                    <td class="text-justify" id="textbox" style="width:60px; height:60px; word-wrap: break-word">
+                    <td class="text-justify" id="textbox" style="width:80px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.Religion)
                     </td>
                     <td>
@@ -171,16 +171,16 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.HusbandOrWifeName)
                     </td>
-                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
+                    <td class="text-justify" id="textbox" style="width:100px; height:80px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.FatherName)
                     </td>
-                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
+                    <td class="text-justify" id="textbox" style="width:100px; height:80px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.FatherBirthplace)
                     </td>
-                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
+                    <td class="text-justify" id="textbox" style="width:100px; height:80px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.MotherName)
                     </td>
-                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
+                    <td class="text-justify" id="textbox" style="width:100px; height:80px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.MotherBirthplace)
                     </td>
                     <td>

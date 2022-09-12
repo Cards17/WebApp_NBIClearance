@@ -3,18 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NBILicenseProjectMVC</title>
+    <title>@ViewData["Title"] - Bureau of Investigation Clearance</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="/css/StyleSheet.css"/>
     
    
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+    <header style="background-color:maroon" >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom" >
+            <div class="container"">
                 <img src="https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/nbi.jpg" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:150px; height:100px;" />
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">National Bureau of Investigation</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b>National Bureau of Investigation</b></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -27,11 +28,11 @@
                         </li>
                         &nbsp; &nbsp;
                         <li class="nav-item">
-                            <a class="btn btn-primary" asp-area="" asp-controller="Applicant" asp-action="Create" style="text-align:center"><b>New Applicant</b></a>
+                            <a class="btn btn-primary" asp-area="" asp-controller="Applicant" asp-action="Create" style="text-align:center"><b>Add Page</b></a>
                         </li>
                         &nbsp; &nbsp;
                         <li class="nav-item">
-                            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Privacy"><b>Company Privacy</b></a>
+                            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Privacy"><b>Contact Us</b></a>
                         </li>
                         &nbsp; &nbsp;
                     </ul>
@@ -44,7 +45,9 @@
             </div>
         </nav>
     </header>
-    <div id="iddiv" class="body_footer_container">
+
+
+    <div id="iddiv" class="body_footer_container" style="background-image:url(https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/bg3.png); background-repeat:no-repeat; background-size:cover; background-position:center">
         <div class="container">
             <main role="main" class="pb-3">
                 @RenderBody()
@@ -52,11 +55,12 @@
         </div>
         <div>
             <footer class="border-top footer text-muted">
-                <div class="footer_container">
+                <div class="footer_container text-center" style="background-color:maroon">
                     <img src="https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/nbi.jpg" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:150px; height:100px;" />
-                    <span class="align-content-center">
-                        &copy; 2022 - National Bureau of Investigation - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    <span style="text-align:center">
+                        © 2019 NBI Clearance Online Registration and Application Services <a asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
                     </span>
+                    
                 </div>
             </footer>
         </div>
