@@ -33,3 +33,13 @@ $(document).ready(function () {
         $("#range-value4").text($("#slider4").val());
     });
 });
+
+
+//$(document).ready(function () {
+//    $("my_table").DataTable({
+//        "scrollY": "450px",
+//        "scrollCollapse": true,
+//        "paging": true
+//    })
+
+//})

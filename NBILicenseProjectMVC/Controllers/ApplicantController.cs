@@ -14,7 +14,6 @@ namespace NBILicenseProjectMVC.Controllers
 {
     public class ApplicantController : Controller
     {
-        //private readonly CustomerDbContext _context;
         private readonly IConfiguration _config;
         //private readonly IWebHostEnvironment _webHostingEnviroment;
         private readonly string _apiUrl;
