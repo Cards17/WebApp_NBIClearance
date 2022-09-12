@@ -47,6 +47,7 @@ namespace NBILicenseProjectMVC.Controllers
                 var result = responseTask.Result;
 
 
+
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = result.Content.ReadAsAsync<IList<Applicant>>();
@@ -57,6 +58,7 @@ namespace NBILicenseProjectMVC.Controllers
             }
             catch (Exception ex)
             {
+                Response.StatusCode = 400;
                 return View("BadRequest");
             }
 
@@ -92,6 +94,7 @@ namespace NBILicenseProjectMVC.Controllers
             }
             catch (Exception ex)
             {
+                Response.StatusCode = 400;
                 return View("BadRequest");
             }
             
@@ -113,6 +116,7 @@ namespace NBILicenseProjectMVC.Controllers
          
             catch (Exception ex)
             {
+                Response.StatusCode = 400;
                 return View("BadRequest");
             }
 
@@ -125,12 +129,14 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id == null)
             {
+                Response.StatusCode = 404;
                 return View("NotFound", id.Value);
             }
 
             var applicant = GetApplicant(id.Value);
             if (applicant == null)
             {
+                Response.StatusCode = 404;
                 return View("NotFound", id.Value);
             }
 
@@ -168,12 +174,14 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id == null)
             {
+                Response.StatusCode = 404;
                 return View("NotFound", id.Value);
             }
 
             var applicant = GetApplicant(id.Value);
             if (applicant == null)
             {
+                Response.StatusCode = 404;
                 return View("NotFound", id.Value);
             }
             return View(applicant);
@@ -188,7 +196,7 @@ namespace NBILicenseProjectMVC.Controllers
         {
             if (id != applicant.Id)
             {
-                //return NotFound();
+                Response.StatusCode = 404;
                 return View("NotFound", id);
             }
 

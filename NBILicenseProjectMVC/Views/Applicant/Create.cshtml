@@ -97,7 +97,7 @@
             <div class="form-group">
                 <label asp-for="EmailAddress" class="control-label"></label>
              @*   <input asp-for="EmailAddress" class="form-control" />*@
-                <textarea asp-for="EmailAddress" class="form-control" text-wrap:normal" type="email" placeholder="Enter a valid email address"></textarea>
+                <input asp-for="EmailAddress" class="form-control" text-wrap:normal" type="email" placeholder="Enter a valid email address"/>
                 <span asp-validation-for="EmailAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -120,14 +120,14 @@
             </div>
             <div class="form-group">
                 <label asp-for="Height" class="control-label"></label>
-                <input asp-for="Height" class="form-control" type="range" id="slider" min="1" max="300" value="50"/>
-                <span class="range-value" id="range-value">50</span>
+                <input asp-for="Height" class="form-control" type="range" id="slider" min="0" max="300" value="0"/>
+                <span class="range-value" id="range-value">0</span>
                 <span asp-validation-for="Height" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Weight" class="control-label"></label>
-                <input asp-for="Weight" class="form-control" type="range" id="slider2" min="1" max="200" value="50" />
-                <span class="range-value2" id="range-value2">50</span>
+                <input asp-for="Weight" class="form-control" type="range" id="slider2" min="0" max="200" value="0" />
+                <span class="range-value2" id="range-value2">0</span>
                 <span asp-validation-for="Weight" class="text-danger"></span>
             </div>
             <div class="form-group">

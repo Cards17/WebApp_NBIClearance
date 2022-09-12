@@ -10,7 +10,9 @@
 <div>
 
     <div>
-        <a class="btn btn-primary" asp-action="Index"> Back </a>
+        <a class="btn btn-primary" asp-controller="Home" asp-action="Index"> Back </a> &nbsp; &nbsp;
+        <a class="btn btn-success" asp-controller="Applicant" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> &nbsp; &nbsp;
+        <a class="btn btn-danger" asp-controller="Applicant" asp-action="Delete" asp-route-id="@Model.Id">Delete</a> &nbsp; &nbsp;
     </div>
     <hr />
     <dl class="row">

@@ -8,17 +8,36 @@
 <br />
 <br />
 <hr />
+<div style="text-align:left">
+    @using (Html.BeginForm("Index", "Applicant", FormMethod.Get))
+    {
+        <table>
+            <tr>
+                <td>
+                    @Html.RadioButton("searchBy", "Firstname", true)
+                    <text> First Name</text>
+                    @Html.RadioButton("searchBy", "Lastname")
+                    <text> Last Name</text>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextBox("searchValue", null, new{Class="form-control",placeholder="Enter First/Last Name"})
+                </td>
+                <td>
+                    <input type="submit" value="Search" class="btn btn-success" />
+                </td>
+                <td> &nbsp; </td>
+            </tr>
 
-<div>
-    <p>
-        <a class="btn btn-success" asp-controller="Applicant" asp-action="Create" style="text-align:center">ADD APPLICANT</a>
-    </p>
+        </table> <br />
+    }
 </div>
 
-
-<div class="d-flex justify-content-center">
+<br>
+<div class="d-flex justify-content-center table table-hover table-striped">
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.ApplicantPicture)
@@ -88,12 +107,13 @@
                 <th>
                         @Html.DisplayNameFor(model => model.MotherBirthplace)
                 </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
+                <tr style="font-family:'Segoe UI'; font-size: 14px">
                     <td>
                         <img src="@item.ApplicantPicture" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:100px; height:100px;" />
                     </td>
@@ -130,7 +150,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.MobileNumber)
                     </td>
-                    <td>
+                    <td class="text-justify" id="textbox" style="width:60px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.EmailAddress)
                     </td>
                     <td>
@@ -139,7 +159,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Peculiarities)
                     </td>
-                    <td>
+                    <td class="text-justify" id="textbox" style="width:60px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.Religion)
                     </td>
                     <td>
@@ -151,17 +171,20 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.HusbandOrWifeName)
                     </td>
-                    <td>
+                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.FatherName)
                     </td>
-                    <td>
+                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.FatherBirthplace)
                     </td>
-                    <td>
+                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.MotherName)
                     </td>
-                    <td>
+                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.MotherBirthplace)
+                    </td>
+                    <td>
+                        <a class="btn btn-success" asp-controller="Applicant" asp-action="Details" asp-route-id="@item.Id">Details</a>
                     </td>
 
                 </tr>
