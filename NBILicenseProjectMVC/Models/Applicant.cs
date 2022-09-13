@@ -26,6 +26,7 @@ namespace NBILicenseProjectMVC.Models
 
         [Required]
         [DataType(DataType.Date)]
+        [Display(Name = "Transaction Date")]
         public DateTime Date { get; set; }
 
         [Required]

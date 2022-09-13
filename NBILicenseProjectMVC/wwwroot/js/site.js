@@ -2,7 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-var setHeight = 3400;
+var setHeight = 3650;
 
 document.getElementById("iddiv").style.height = setHeight + "px";
 
@@ -33,13 +33,3 @@ $(document).ready(function () {
         $("#range-value4").text($("#slider4").val());
     });
 });
-
-
-//$(document).ready(function () {
-//    $("my_table").DataTable({
-//        "scrollY": "450px",
-//        "scrollCollapse": true,
-//        "paging": true
-//    })
-
-//})

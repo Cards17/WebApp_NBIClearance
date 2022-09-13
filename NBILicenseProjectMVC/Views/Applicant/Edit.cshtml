@@ -10,7 +10,7 @@
 <h4>Applicant's Details</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6 " style="font-size:20px; color:maroon">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
@@ -89,12 +89,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="LandlineNumber" class="control-label"></label>
-                <textarea asp-for="LandlineNumber" class="form-control" text-wrap:normal" type="text" placeholder="Enter 10-digit Landline Number"></textarea>
+                <textarea asp-for="LandlineNumber" class="form-control" text-wrap:normal" type="text" placeholder="10-digit Landline Number (032XXXXXXX)"></textarea>
                 <span asp-validation-for="LandlineNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MobileNumber" class="control-label"></label>
-                <textarea asp-for="MobileNumber" class="form-control" text-wrap:normal" type="text" placeholder="Mobile Number (09XXXXXXXXX)"></textarea>
+                <textarea asp-for="MobileNumber" class="form-control" text-wrap:normal" type="text" placeholder="11-digit Mobile Number (09XXXXXXXXX)"></textarea>
                 <span asp-validation-for="MobileNumber" class="text-danger"></span>
             </div>
             

@@ -11,40 +11,43 @@
    
 </head>
 <body>
-    <header style="background-color:maroon" >
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom" >
-            <div class="container"">
-                <img src="https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/nbi.jpg" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:150px; height:100px;" />
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b>National Bureau of Investigation</b></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item">
-                            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index"><b>Home Page</b></a>
-                        </li>
-                        &nbsp; &nbsp;
-                        <li class="nav-item">
-                            <a class="btn btn-primary" asp-area="" asp-controller="Applicant" asp-action="Create" style="text-align:center"><b>Add Page</b></a>
-                        </li>
-                        &nbsp; &nbsp;
-                        <li class="nav-item">
-                            <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Privacy"><b>Contact Us</b></a>
-                        </li>
-                        &nbsp; &nbsp;
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+    <div style="width:100%;background-color:maroon">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom">
+                <div class="container">
+                    <img src="https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/nbi.jpg" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:150px; height:100px;" />
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><b>National Bureau of Investigation</b></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Index"><b>Home Page</b></a>
+                            </li>
+                            &nbsp; &nbsp;
+                            <li class="nav-item">
+                                <a class="btn btn-primary" asp-area="" asp-controller="Applicant" asp-action="Create" style="text-align:center"><b>Add Page</b></a>
+                            </li>
+                            &nbsp; &nbsp;
+                            <li class="nav-item">
+                                <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Privacy"><b>Contact Us</b></a>
+                            </li>
+                            &nbsp; &nbsp;
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
+    </div>
+    
 
 
     <div id="iddiv" class="body_footer_container" style="background-image:url(https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/bg3.png); background-repeat:no-repeat; background-size:cover; background-position:center">
@@ -54,11 +57,11 @@
             </main>
         </div>
         <div>
-            <footer class="border-top footer text-muted">
-                <div class="footer_container text-center" style="background-color:maroon">
+            <footer class="border-top footer text-muted" >
+                <div class="footer_container text-center" style="background-color:maroon; padding: 20px;">
                     <img src="https://nbiclearancestorage.blob.core.windows.net/nbiclearancecontainer/nbi.jpg" class="rounded mx-auto d-block" style="overflow: hidden; position: relative; width:150px; height:100px;" />
                     <span style="text-align:center">
-                        © 2019 NBI Clearance Online Registration and Application Services <a asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a>
+                        <b>© 2022 NBI Clearance Online Registration and Application Services <a asp-area="" asp-controller="Home" asp-action="Privacy">Contact Us</a></b>
                     </span>
                     
                 </div>
