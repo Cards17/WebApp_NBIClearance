@@ -26,6 +26,11 @@ $(document).ready(function () {
     $("#slider3").on("input change", function () {
         $("#range-value3").text($("#slider3").val());
     });
+
+    $("#slider").slider({
+        change: function (event, ui) 
+            { $("#slider-text").val(ui.value); }
+    });
 });
 
 $(document).ready(function () {

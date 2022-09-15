@@ -36,6 +36,7 @@ namespace NBILicenseProject.Controllers
             if (applicant == null)
             {
                 return NotFound();
+               
             }
 
             return applicant;

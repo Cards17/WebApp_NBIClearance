@@ -12,6 +12,7 @@ using static System.Reflection.Metadata.BlobBuilder;
 
 namespace NBILicenseProjectMVC.Controllers
 {
+   
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -24,6 +25,7 @@ namespace NBILicenseProjectMVC.Controllers
             _logger = logger;
             _config = config;
             _apiUrl = _config.GetValue<string>("WebApiUrl");
+            
             if (Client == null)
             {
                 Client = new HttpClient();
@@ -46,14 +48,15 @@ namespace NBILicenseProjectMVC.Controllers
                 {
                     var readTask = result.Content.ReadAsAsync<IList<Applicant>>();
                     readTask.Wait();
-                    listapplicants = readTask.Result;
+                    listapplicants = readTask.Result; 
                 }
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return BadRequest("Application Error");
-                //return View("BadRequest");
+                //return BadRequest("Application Error");
+                return View("BadRequest");
             }
             return View(listapplicants);
         }
@@ -67,6 +70,11 @@ namespace NBILicenseProjectMVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult NotFound()
+        {
+            return View();
         }
     }
 }

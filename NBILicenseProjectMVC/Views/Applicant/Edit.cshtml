@@ -39,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
+                <input asp-for="Date" class="form-control" min=@DateTime.Now.AddDays(+1).ToString("yyyy-MM-dd") max=@DateTime.Now.AddDays(+30).ToString("yyyy-MM-dd") />
                 <span asp-validation-for="Date" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -60,7 +60,7 @@
             
             <div class="form-group">
                 <label asp-for="Birthdate" class="control-label"></label>
-                <input asp-for="Birthdate" class="form-control" />
+                <input asp-for="Birthdate" class="form-control" max=@DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd") />
                 <span asp-validation-for="Birthdate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -124,13 +124,13 @@
             <div class="form-group">
                 <label asp-for="Height" class="control-label"></label>
                 <input asp-for="Height" class="form-control" type="range" id="slider3" min="1" max="300"  />
-                <span class="range-value3" id="range-value3"></span>
+                <label class="range-value3" id="range-value3">@Model.Height</label>
                 <span asp-validation-for="Height" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Weight" class="control-label"></label>
                 <input asp-for="Weight" class="form-control" type="range" id="slider4" min="1" max="200"  />
-                <span class="range-value4" id="range-value4"></span>
+                <label class="range-value4" id="range-value4">@Model.Weight</label>
                 <span asp-validation-for="Weight" class="text-danger"></span>
             </div>
             <div class="form-group">

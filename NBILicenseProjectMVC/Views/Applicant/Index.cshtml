@@ -53,6 +53,9 @@
                     @Html.DisplayNameFor(model => model.Middlename)
                 </th>
                 <th>
+                    @Html.DisplayNameFor(model => model.Birthdate)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.BranchName)
                 </th>
                 <th>
@@ -127,6 +130,9 @@
                     </td>
                     <td class ="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.Middlename)
+                    </td>
+                    <td class="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
+                        @Html.DisplayFor(modelItem => item.Birthdate)
                     </td>
                     <td class ="text-justify" id="textbox" style="width:100px; height:60px; word-wrap: break-word">
                         @Html.DisplayFor(modelItem => item.BranchName)

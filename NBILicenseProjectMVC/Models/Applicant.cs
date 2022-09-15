@@ -26,7 +26,7 @@ namespace NBILicenseProjectMVC.Models
 
         [Required]
         [DataType(DataType.Date)]
-        [Display(Name = "Transaction Date")]
+        [Display(Name = "Appointment Date")]
         public DateTime Date { get; set; }
 
         [Required]
@@ -97,11 +97,14 @@ namespace NBILicenseProjectMVC.Models
         [DataType(DataType.Text)]
         public string Religion { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:0}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "You must choose a value.")]
         [Range(1, 300, ErrorMessage = "Height should be between 1 cm and 300 cm")]
         [Display(Name = "Height (cm)")]
         public decimal? Height { get; set; }
 
+
+        [DisplayFormat(DataFormatString = "{0:0}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "You must choose a value.")]
         [Range(1, 200, ErrorMessage = "Height should be between 1 kg and 200 kg")]
         [Display(Name = "Weight (kg)")]

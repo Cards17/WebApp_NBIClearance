@@ -132,3 +132,13 @@ C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.dll
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.pdb
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.genruntimeconfig.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin\Debug\netcoreapp3.1\NBILicenseProjectAPI.Views.dll
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\bin\Debug\netcoreapp3.1\NBILicenseProjectAPI.Views.pdb
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.RazorAssemblyInfo.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.RazorAssemblyInfo.cs
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.TagHelpers.input.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.TagHelpers.output.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.RazorCoreGenerate.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\Razor\Models\NotFound.cshtml.g.cs
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.RazorTargetAssemblyInfo.cs
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProject\obj\Debug\netcoreapp3.1\NBILicenseProjectAPI.Views.pdb

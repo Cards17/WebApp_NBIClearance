@@ -155,3 +155,4 @@ C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProjectMVC\
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProjectMVC\obj\Debug\netcoreapp3.1\NBILicenseProjectMVC.dll
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProjectMVC\obj\Debug\netcoreapp3.1\NBILicenseProjectMVC.pdb
 C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProjectMVC\obj\Debug\netcoreapp3.1\NBILicenseProjectMVC.genruntimeconfig.cache
+C:\Users\ricardo.piquero.jr\source\repos\NBILicenseProject\NBILicenseProjectMVC\bin\Debug\netcoreapp3.1\web.config
